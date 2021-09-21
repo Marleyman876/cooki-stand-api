@@ -3,5 +3,7 @@ build:
     web: Dockerfile
 release:
   image: web
+  command:
+    - python manage.py collectstatic --noinput
 run:
-  web: gunicorn project.wsgi --workers 4
+  web: gunicorn project.wsgi
